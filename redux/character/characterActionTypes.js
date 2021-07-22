@@ -1,0 +1,7 @@
+const characterActionTypes = {
+  GET_CHARACTERS: 'GET_CHARACTERS',
+  GET_CHARACTERS_PENDING: 'GET_CHARACTERS_PENDING',
+  GET_CHARACTERS_ERROR: 'GET_CHARACTERS_ERROR',
+};
+
+export default characterActionTypes;
