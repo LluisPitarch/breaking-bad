@@ -1,19 +1,21 @@
 import { useRef } from 'react';
 import Image from 'next/image';
-import styled from 'styled-components';
+import Styled from 'styled-components';
 import { useDebouncedCallback } from 'use-debounce';
 
-const StyledNavBar = styled.div`
+const StyledNavBar = Styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 1480px;
   padding: 30px 40px;
   position: sticky;
   margin: auto;
+  width: 100%;
   align-items: center;
+  box-sizing: border-box;
 `;
 
-const StyledForm = styled.form`
+const StyledForm = Styled.form`
   position: relative;
 
   &::before {
@@ -30,7 +32,7 @@ const StyledForm = styled.form`
   }
 `;
 
-const StyledInput = styled.input`
+const StyledInput = Styled.input`
   border: solid 1px white;
   border-radius: 6px;
   line-height: 32px;

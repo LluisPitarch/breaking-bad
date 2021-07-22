@@ -99,18 +99,37 @@ menu,
 nav,
 section {
   display: block;
+  box-sizing: border-box;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cooper';
+}
+
 body {
   line-height: 1;
+  box-sizing: border-box;
+  font-family: 'Open Sans';
+  font-family: 14px;
+  color: white;
 }
+
 ol,
 ul {
   list-style: none;
+  box-sizing: border-box;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -118,6 +137,7 @@ q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

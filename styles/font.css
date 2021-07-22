@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Cooper';
+  src: url('/fonts/CooperBoldBT.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper';
+  src: url('/fonts/CooperBoldItalicBT.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cooper';
+  src: url('/fonts/CooperLightBT.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper';
+  src: url('/fonts/CooperLightItalicBT.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-Light.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-Regular.ttf');
+  font-weight: 400;
+  font-style: italic;
+}

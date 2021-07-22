@@ -4,14 +4,33 @@ import NavBar from './NavBar';
 import Footer from './Footer';
 
 const StyledLayout = Styled.div`
-min-height: 100vh;
-background: linear-gradient(-190deg, rgba(14,19,22,1) 0%, rgba(6,96,35,1) 100%);;
+  min-height: 100vh;
+  background: linear-gradient(0deg, rgba(14,19,22,1) 0%, rgba(6,70,35,1) 100%), url(/img/bg.jpg) repeat ;
+  background-size: cover;
+  background-blend-mode: color;
+
+&::before { 
+  content: "";
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4)100%);
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+`;
+
+const PageContainer = Styled.div`
+  max-width: 1480px;
+  padding: 0px 40px;
 `;
 
 const Layout = ({ children }) => (
   <StyledLayout>
     <NavBar />
-    {children}
+    <PageContainer>{children}</PageContainer>
     <Footer />
   </StyledLayout>
 );
