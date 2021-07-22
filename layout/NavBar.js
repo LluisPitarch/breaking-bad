@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import Styled from 'styled-components';
 import { useDebouncedCallback } from 'use-debounce';
-import SearchBar from '../components/ui/inputs/SearchBar';
+import SearchBar from '../components/molecules/inputs/SearchBar';
 
 const StyledNavBar = Styled.div`
   display: flex;

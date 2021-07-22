@@ -9,6 +9,19 @@ export const characterReducer = (state = initialState, { type, payload }) => {
         errorReset: false,
       };
 
+    case characterActionTypes.GET_CHARACTERS_ERROR:
+      return {
+        isPending: false,
+        error: payload,
+      };
+
+    case characterActionTypes.GET_CHARACTERS:
+      return {
+        characters: payload,
+        isPending: false,
+        error: false,
+      };
+
     default:
       return state;
   }

@@ -1,6 +1,5 @@
-import axios from 'axios';
-
 import characterActionTypes from './characterActionTypes';
+import { fetchCharacters } from '../../services/charactersServices';
 
 export const getCharacters = () => async (dispatch) => {
   dispatch({
@@ -8,14 +7,12 @@ export const getCharacters = () => async (dispatch) => {
   });
 
   try {
-    const res = await axios.get('', {
-      email,
-    });
+    const { characters, status } = await fetchCharacters();
 
-    if (res.status === 200) {
+    if (status === 200) {
       dispatch({
         type: characterActionTypes.GET_CHARACTERS,
-        payload: res.data,
+        payload: characters,
       });
     }
   } catch (error) {
