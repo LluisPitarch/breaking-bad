@@ -4,8 +4,8 @@ import { initialState } from './characterInitialState';
 export const characterReducer = (state = initialState, { type, payload }) => {
   const reducerTypes = {
     [characterActionTypes.GET_CHARACTERS_PENDING]: {
-      isPendingReset: true,
-      errorReset: false,
+      isPending: true,
+      error: false,
     },
 
     [characterActionTypes.GET_CHARACTERS_ERROR]: {

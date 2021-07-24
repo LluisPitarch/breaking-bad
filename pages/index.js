@@ -8,20 +8,18 @@ import Layout from '../layout/Layout';
 const Home = () => {
   const dispatch = useDispatch();
   const characters = useSelector((state) => state.characters.characters);
+  const isPending = useSelector((state) => state.characters.isPending);
 
   useEffect(() => {
     dispatch(getCharacters());
   }, []);
 
   return (
-    <Layout>
-      {characters ? (
+    <Layout isLoading={isPending}>
+      {characters &&
         characters.map(({ name, char_id, img }) => (
           <div key={char_id}>{name}</div>
-        ))
-      ) : (
-        <span>Loading..</span>
-      )}
+        ))}
     </Layout>
   );
 };

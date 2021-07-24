@@ -15,7 +15,7 @@ const Backdrop = Styled.div`
 
 const Spinner = () => (
   <Backdrop>
-    <Image src="/img/spinner.gif" width="100" height="100" />
+    <Image src="/img/spinner.gif" width="70" height="70" />
   </Backdrop>
 );
 
