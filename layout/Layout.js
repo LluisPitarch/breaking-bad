@@ -2,6 +2,7 @@ import Styled from 'styled-components';
 
 import NavBar from './NavBar';
 import Footer from './Footer';
+import Loader from '../components/molecules/spinner/Spinner';
 
 const StyledLayout = Styled.div`
   min-height: 100vh;
@@ -27,12 +28,15 @@ const PageContainer = Styled.div`
   padding: 0px 40px;
 `;
 
-const Layout = ({ children }) => (
-  <StyledLayout>
-    <NavBar />
-    <PageContainer>{children}</PageContainer>
-    <Footer />
-  </StyledLayout>
+const Layout = ({ children, isLoading = false }) => (
+  <>
+    {isLoading && <Loader />}
+    <StyledLayout>
+      <NavBar />
+      <PageContainer>{children}</PageContainer>
+      <Footer />
+    </StyledLayout>
+  </>
 );
 
 export default Layout;
