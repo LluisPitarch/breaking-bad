@@ -2,14 +2,23 @@ import characterActionTypes from './characterActionTypes';
 import { initialState } from './characterInitialState';
 
 export const characterReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case characterActionTypes.GET_CHARACTERS_PENDING:
-      return {
-        isPendingReset: true,
-        errorReset: false,
-      };
+  const reducerTypes = {
+    [characterActionTypes.GET_CHARACTERS_PENDING]: {
+      isPending: true,
+      error: false,
+    },
 
-    default:
-      return state;
-  }
+    [characterActionTypes.GET_CHARACTERS_ERROR]: {
+      isPending: false,
+      error: payload,
+    },
+
+    [characterActionTypes.GET_CHARACTERS]: {
+      characters: payload,
+      isPending: false,
+      error: false,
+    },
+  };
+
+  return reducerTypes[type] || state;
 };
