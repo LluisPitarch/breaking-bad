@@ -1,10 +1,6 @@
 import Styled from 'styled-components';
 
 const StyledFooter = Styled.footer`
-position: absolute;
-bottom: 0;
-left: 0;
-right: 0;
 margin: auto;
 width: fit-content;
 padding: 20px 0px;

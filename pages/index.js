@@ -5,6 +5,8 @@ import { getCharacters } from '../redux/character/characterActions';
 
 import Layout from '../layout/Layout';
 
+import CharactersList from '../components/organisms/CharactersList';
+
 const Home = () => {
   const dispatch = useDispatch();
   const characters = useSelector((state) => state.characters.characters);
@@ -16,10 +18,7 @@ const Home = () => {
 
   return (
     <Layout isLoading={isPending}>
-      {characters &&
-        characters.map(({ name, char_id, img }) => (
-          <div key={char_id}>{name}</div>
-        ))}
+      {characters && <CharactersList characters={characters} />}
     </Layout>
   );
 };
