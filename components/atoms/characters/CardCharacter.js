@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import Styled from 'styled-components';
 
 const Container = Styled.div`
@@ -43,9 +44,9 @@ margin-top: 10px;
 letter-spacing: 2px;
 `;
 
-const ChardCharacter = ({ name, char_id, img, nickname }) => {
-  const handleClick = () => {
-    console.log(char_id);
+const ChardCharacter = ({ name, char_id, img, nickname, onClick }) => {
+  const handleClick = async () => {
+    onClick(char_id);
   };
 
   return (

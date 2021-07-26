@@ -18,11 +18,11 @@ align-items: center;
 }
 `;
 
-const CharactersList = ({ characters }) => (
+const CharactersList = ({ characters, onClick }) => (
   <Grid>
     <StyledHorizontalScroll reverseScroll>
       {characters.map((char) => (
-        <CardCharacter {...char} key={char.char_id} />
+        <CardCharacter {...char} key={char.char_id} onClick={onClick} />
       ))}
     </StyledHorizontalScroll>
   </Grid>

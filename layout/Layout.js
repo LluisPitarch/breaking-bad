@@ -26,6 +26,7 @@ const StyledLayout = Styled.div`
 const PageContainer = Styled.div`
   max-width: 1480px;
   padding: 0px 40px;
+  margin: 0 auto;
 `;
 
 const Layout = ({ children, isLoading = false }) => (

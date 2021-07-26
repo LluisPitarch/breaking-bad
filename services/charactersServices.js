@@ -8,3 +8,12 @@ export const fetchCharacters = async () => {
     characters: data,
   };
 };
+
+export const fetchCharacter = async (id) => {
+  const { status, data } = await axios.get(`/api/characters/${id}`);
+
+  return {
+    status,
+    selectedCharacter: data,
+  };
+};
