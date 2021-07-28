@@ -2,7 +2,7 @@ import Styled from 'styled-components';
 
 import NavBar from './NavBar';
 import Footer from './Footer';
-import Loader from '../components/molecules/spinner/Spinner';
+import Loader from '../components/molecules/Spinner';
 
 const StyledLayout = Styled.div`
   min-height: 100vh;

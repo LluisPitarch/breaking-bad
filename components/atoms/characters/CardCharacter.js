@@ -9,7 +9,7 @@ align-items: center;
 justify-content:center;
 min-width: 370px;
 height: fit-content;
-cursor: pointer;
+cursor: ${(props) => (props.theresIsOnClickAction ? 'pointer' : 'default')};
 `;
 
 const StyledImage = Styled(Image)`
@@ -46,11 +46,11 @@ letter-spacing: 2px;
 
 const ChardCharacter = ({ name, char_id, img, nickname, onClick }) => {
   const handleClick = async () => {
-    onClick(char_id);
+    onClick && onClick(char_id);
   };
 
   return (
-    <Container onClick={handleClick}>
+    <Container onClick={handleClick} theresIsOnClickAction={onClick}>
       <StyledImage
         src="/img/frame-1.png"
         width="300"

@@ -4,3 +4,6 @@ export const initialState = {
   error: false,
   selectedCharacter: null,
 };
+
+
+

@@ -1,30 +1,32 @@
 import Styled from 'styled-components';
-import HorizontalScroll from 'react-scroll-horizontal';
+import Slider from 'react-slick';
 
 import CardCharacter from '../atoms/characters/CardCharacter';
 
-const Grid = Styled.div`
-max-width: 100vw;
+const StyledSlider = Styled(Slider)`
 height: calc(100vh - 212px);
-`;
-
-const StyledHorizontalScroll = Styled(HorizontalScroll)`
 display: flex;
 align-items: center;
-
-div {
-display: flex;
-align-items: center;
-}
 `;
+
+const settings = {
+  dots: false,
+  infinite: true,
+  autoPlay: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 2,
+  lazyLoad: false,
+};
 
 const CharactersList = ({ characters, onClick }) => (
-  <Grid>
-    <StyledHorizontalScroll reverseScroll>
-      {characters.map((char) => (
-        <CardCharacter {...char} key={char.char_id} onClick={onClick} />
-      ))}
-    </StyledHorizontalScroll>
-  </Grid>
+  <div>
+    <StyledSlider {...settings}>
+      {characters.length &&
+        characters.map((char) => (
+          <CardCharacter {...char} key={char.char_id} onClick={onClick} />
+        ))}
+    </StyledSlider>
+  </div>
 );
 export default CharactersList;

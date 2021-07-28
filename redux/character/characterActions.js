@@ -4,6 +4,8 @@ import {
   fetchCharacter,
 } from '../../services/charactersServices';
 
+import { errorHandler } from '../../utils/errorHandler';
+
 export const getCharacters = () => async (dispatch) => {
   dispatch({
     type: characterActionTypes.GET_CHARACTERS_PENDING,
@@ -23,6 +25,8 @@ export const getCharacters = () => async (dispatch) => {
       type: characterActionTypes.GET_CHARACTERS_ERROR,
       payload: error,
     });
+
+    errorHandler(error);
   }
 };
 
@@ -45,5 +49,7 @@ export const getSelectedCharacter = (id) => async (dispatch) => {
       type: characterActionTypes.GET_CHARACTERS_ERROR,
       payload: error,
     });
+
+    errorHandler(error);
   }
 };

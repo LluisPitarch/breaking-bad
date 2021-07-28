@@ -3,8 +3,9 @@ import { useRouter } from 'next/router';
 
 import { useSelector, useDispatch } from 'react-redux';
 import Styled from 'styled-components';
-import { SvgIcon } from '@material-ui/core';
+import { motion } from 'framer-motion';
 
+import { SvgIcon } from '@material-ui/core';
 import { getSelectedCharacter } from '../../redux/character/characterActions';
 
 import Layout from '../../layout/Layout';
@@ -70,46 +71,52 @@ const CharacterDetail = () => {
       console.log(id);
       dispatch(getSelectedCharacter(Math.floor(id)));
     }
-  }, [character]);
+  }, [id]);
 
   return (
     <Layout isLoading={isPending}>
-      <DetailContainer>
-        {character?.birthday && (
-          <>
-            <CardCharacter {...character} />
-            <Info>
-              <FeatureContainer>
-                <SvgIcon component={Event} />
-                <Title>Birthday:</Title>
-                {character.birthday}
-              </FeatureContainer>
-              <FeatureContainer>
-                <SvgIcon component={AccessibilityIcon} />
-                <Title>Still Alive?:</Title> {character.status}
-              </FeatureContainer>
-              <FeatureContainer>
-                <SvgIcon component={WorkIcon} />
-                <Title>Occupation:</Title>
-                <TagList>
-                  {character.occupation.map((i) => (
-                    <Tag key={i}>{i}</Tag>
-                  ))}
-                </TagList>
-              </FeatureContainer>
-              <FeatureContainer>
-                <SvgIcon component={CameraRollIcon} />
-                <Title>Appearance:</Title>
-                <TagList>
-                  {character.appearance.map((i) => (
-                    <Tag key={i}>{i}</Tag>
-                  ))}
-                </TagList>
-              </FeatureContainer>
-            </Info>
-          </>
-        )}
-      </DetailContainer>
+      <motion.div
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        duration={1}>
+        <DetailContainer>
+          {character?.birthday && (
+            <>
+              <CardCharacter {...character} />
+              <Info>
+                <FeatureContainer>
+                  <SvgIcon component={Event} />
+                  <Title>Birthday:</Title>
+                  {character.birthday}
+                </FeatureContainer>
+                <FeatureContainer>
+                  <SvgIcon component={AccessibilityIcon} />
+                  <Title>Still Alive?:</Title> {character.status}
+                </FeatureContainer>
+                <FeatureContainer>
+                  <SvgIcon component={WorkIcon} />
+                  <Title>Occupation:</Title>
+                  <TagList>
+                    {character.occupation.map((i) => (
+                      <Tag key={i}>{i}</Tag>
+                    ))}
+                  </TagList>
+                </FeatureContainer>
+                <FeatureContainer>
+                  <SvgIcon component={CameraRollIcon} />
+                  <Title>Appearance:</Title>
+                  <TagList>
+                    {character.appearance.map((i) => (
+                      <Tag key={i}>{i}</Tag>
+                    ))}
+                  </TagList>
+                </FeatureContainer>
+              </Info>
+            </>
+          )}
+        </DetailContainer>
+      </motion.div>
     </Layout>
   );
 };

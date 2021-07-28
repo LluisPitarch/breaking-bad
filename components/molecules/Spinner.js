@@ -11,7 +11,8 @@ const Backdrop = Styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
- `;
+  z-index: 2;
+  `;
 
 const Spinner = () => (
   <Backdrop>

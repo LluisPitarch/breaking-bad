@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { motion } from 'framer-motion';
+
 import {
   getCharacters,
   getSelectedCharacter,
@@ -19,7 +21,9 @@ const Home = () => {
   const isPending = useSelector((state) => state.characters.isPending);
 
   useEffect(() => {
-    dispatch(getCharacters());
+    if (characters.length === 0) {
+      dispatch(getCharacters());
+    }
   }, []);
 
   const handleClick = async (id) => {
@@ -29,9 +33,15 @@ const Home = () => {
 
   return (
     <Layout isLoading={isPending}>
-      {characters && (
-        <CharactersList characters={characters} onClick={handleClick} />
-      )}
+      <motion.div
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        duration={1}>
+        {characters.length > 0 && (
+          <CharactersList characters={characters} onClick={handleClick} />
+        )}
+      </motion.div>
     </Layout>
   );
 };

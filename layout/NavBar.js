@@ -1,8 +1,7 @@
+import Link from 'next/link';
 import { useRef } from 'react';
 import Image from 'next/image';
 import Styled from 'styled-components';
-import { useDebouncedCallback } from 'use-debounce';
-import SearchBar from '../components/molecules/inputs/SearchBar';
 
 const StyledNavBar = Styled.div`
   display: flex;
@@ -16,23 +15,23 @@ const StyledNavBar = Styled.div`
   box-sizing: border-box;
 `;
 
+const StyledImage = Styled(Image)`
+cursor: pointer;
+`;
+
 const NavBar = () => {
   const inputRef = useRef('');
 
-  const handleSearch = useDebouncedCallback(() => {
-    // Todo -> handle Search
-  }, 250);
-
   return (
     <StyledNavBar>
-      <Image
-        src="/img/logo/bbLogo.png"
-        alt="Breaking bad characters"
-        width="150"
-        height="100"
-      />
-
-      <SearchBar onChange={handleSearch} ref={inputRef} />
+      <Link href={'/'}>
+        <StyledImage
+          src="/img/logo/bbLogo.png"
+          alt="Breaking bad characters"
+          width="150"
+          height="100"
+        />
+      </Link>
     </StyledNavBar>
   );
 };
