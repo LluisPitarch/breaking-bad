@@ -25,12 +25,14 @@ const NavBar = () => {
   return (
     <StyledNavBar>
       <Link href={'/'}>
-        <StyledImage
-          src="/img/logo/bbLogo.png"
-          alt="Breaking bad characters"
-          width="150"
-          height="100"
-        />
+        <a>
+          <StyledImage
+            src="/img/logo/bbLogo.png"
+            alt="Breaking bad characters"
+            width="150"
+            height="100"
+          />
+        </a>
       </Link>
     </StyledNavBar>
   );

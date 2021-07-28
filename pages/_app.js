@@ -26,17 +26,19 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} />
-        <ToastContainer
-          position="top-right"
-          autoClose={8000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          draggable={false}
-          pauseOnVisibilityChange
-          closeOnClick
-          pauseOnHover
-        />
+        <>
+          <Component {...pageProps} />
+          <ToastContainer
+            position="top-right"
+            autoClose={8000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            draggable={false}
+            pauseOnVisibilityChange
+            closeOnClick
+            pauseOnHover
+          />
+        </>
       </AnimatePresence>
     </Provider>
   );

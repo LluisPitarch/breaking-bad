@@ -68,7 +68,6 @@ const CharacterDetail = () => {
 
   useEffect(() => {
     if (!character && id) {
-      console.log(id);
       dispatch(getSelectedCharacter(Math.floor(id)));
     }
   }, [id]);
