@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useRef } from 'react';
 import Image from 'next/image';
 import Styled from 'styled-components';
 import LanguageSelect from '../components/molecules/LanguageSelect';
@@ -20,24 +19,20 @@ const StyledImage = Styled(Image)`
 cursor: pointer;
 `;
 
-const NavBar = () => {
-  const inputRef = useRef('');
-
-  return (
-    <StyledNavBar>
-      <Link href={'/'}>
-        <a>
-          <StyledImage
-            src="/img/logo/bbLogo.png"
-            alt="Breaking bad characters"
-            width="150"
-            height="100"
-          />
-        </a>
-      </Link>
-      <LanguageSelect />
-    </StyledNavBar>
-  );
-};
+const NavBar = () => (
+  <StyledNavBar>
+    <Link href="/">
+      <a data-testid="link-home">
+        <StyledImage
+          src="/img/logo/bbLogo.png"
+          alt="Breaking bad characters"
+          width="150"
+          height="100"
+        />
+      </a>
+    </Link>
+    <LanguageSelect />
+  </StyledNavBar>
+);
 
 export default NavBar;

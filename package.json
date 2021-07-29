@@ -8,21 +8,18 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.2",
-    "@svgr/webpack": "^5.5.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
     "axios": "^0.21.1",
     "eslint-config-prettier": "^8.3.0",
     "framer-motion": "^4.1.17",
-    "jest": "^27.0.6",
     "next": "11.0.1",
     "next-i18next": "^8.5.5",
-    "prettier": "^2.3.2",
+    "next-page-tester": "^0.27.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "^7.2.4",
@@ -30,15 +27,29 @@
     "react-switch": "^6.0.0",
     "react-toastify": "^7.0.4",
     "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.0",
     "thunk": "0.0.1"
   },
   "devDependencies": {
+    "@babel/core": "7.14.6",
+    "@babel/runtime": "7.14.6",
+    "@svgr/webpack": "5.5.0",
+    "@testing-library/dom": "8.1.0",
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "12.0.0",
+    "babel-jest": "27.0.6",
     "eslint": "^7.31.0",
+    "eslint-config-airbnb": "18.2.1",
     "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-react": "^7.24.0",
     "husky": "^7.0.1",
-    "redux-devtools-extension": "^2.13.9"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "27.0.6",
+    "lint-staged": ">=11.0.0",
+    "next-router-mock": "^0.2.1",
+    "prettier": "2.3.2"
   }
 }

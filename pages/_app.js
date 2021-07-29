@@ -2,12 +2,13 @@ import Head from 'next/head';
 
 import axios from 'axios';
 import { Provider } from 'react-redux';
-import configureStore from '../redux/store';
 
 import { appWithTranslation } from 'next-i18next';
 
 import { AnimatePresence } from 'framer-motion';
 import { ToastContainer } from 'react-toastify';
+
+import configureStore from '../redux/store';
 
 import '../styles/globals.css';
 import '../styles/font.css';
