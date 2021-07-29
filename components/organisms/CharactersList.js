@@ -24,7 +24,7 @@ const CharactersList = ({ characters, onClick }) => (
     <StyledSlider {...settings}>
       {characters.length &&
         characters.map((char) => (
-          <CardCharacter {...char} key={char.char_id} onClick={onClick} />
+          <CardCharacter {...char} key={char?.char_id} onClick={onClick} />
         ))}
     </StyledSlider>
   </div>

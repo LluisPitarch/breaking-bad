@@ -21,6 +21,7 @@ module.exports = {
     },
   },
   rules: {
+    camelcase: ['warn', { properties: 'never' }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 'off',
     'import/prefer-default-export': 'off',
