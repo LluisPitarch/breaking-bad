@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import ToastMessage from '/components/molecules/ToastMessage';
+import ToastMessage from '../components/molecules/ToastMessage';
 
 export const showErrorNotification = (message, action, actionMessage) => {
   toast.dismiss();

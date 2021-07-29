@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import Styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { SvgIcon } from '@material-ui/core';
 import { getSelectedCharacter } from '../../redux/character/characterActions';
@@ -65,6 +67,7 @@ const CharacterDetail = () => {
   const { id } = router.query;
 
   const dispatch = useDispatch();
+  const { t } = useTranslation('app');
 
   useEffect(() => {
     if (!character && id) {
@@ -86,16 +89,16 @@ const CharacterDetail = () => {
               <Info>
                 <FeatureContainer>
                   <SvgIcon component={Event} />
-                  <Title>Birthday:</Title>
+                  <Title>{t('birthday')}:</Title>
                   {character.birthday}
                 </FeatureContainer>
                 <FeatureContainer>
                   <SvgIcon component={AccessibilityIcon} />
-                  <Title>Still Alive?:</Title> {character.status}
+                  <Title>{t('stillAlive')}:</Title> {character.status}
                 </FeatureContainer>
                 <FeatureContainer>
                   <SvgIcon component={WorkIcon} />
-                  <Title>Occupation:</Title>
+                  <Title>{t('occupation')}:</Title>
                   <TagList>
                     {character.occupation.map((i) => (
                       <Tag key={i}>{i}</Tag>
@@ -104,7 +107,7 @@ const CharacterDetail = () => {
                 </FeatureContainer>
                 <FeatureContainer>
                   <SvgIcon component={CameraRollIcon} />
-                  <Title>Appearance:</Title>
+                  <Title>{t('appearance')}:</Title>
                   <TagList>
                     {character.appearance.map((i) => (
                       <Tag key={i}>{i}</Tag>
@@ -121,3 +124,11 @@ const CharacterDetail = () => {
 };
 
 export default CharacterDetail;
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['app'])),
+    },
+  };
+}

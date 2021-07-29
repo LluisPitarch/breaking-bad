@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import CardCharacter from '../atoms/characters/CardCharacter';
 
 const StyledSlider = Styled(Slider)`
-height: calc(100vh - 212px);
+height: calc(100vh - 352px);
 display: flex;
 align-items: center;
 `;

@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Provider } from 'react-redux';
 import configureStore from '../redux/store';
 
+import { appWithTranslation } from 'next-i18next';
+
 import { AnimatePresence } from 'framer-motion';
 import { ToastContainer } from 'react-toastify';
 
@@ -44,4 +46,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

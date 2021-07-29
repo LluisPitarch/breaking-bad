@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import Image from 'next/image';
 import Styled from 'styled-components';
+import LanguageSelect from '../components/molecules/LanguageSelect';
 
 const StyledNavBar = Styled.div`
   display: flex;
@@ -34,6 +35,7 @@ const NavBar = () => {
           />
         </a>
       </Link>
+      <LanguageSelect />
     </StyledNavBar>
   );
 };
