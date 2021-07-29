@@ -17,7 +17,7 @@ font-weight: bold;
 margin: 0 5px;
 `;
 
-const LanguageSelect = (props) => {
+const LanguageSelect = () => {
   const router = useRouter();
   const { locale, asPath } = useRouter();
   const [activeLanguage, setActiveLanguage] = useState(locale);
