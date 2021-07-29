@@ -7,22 +7,21 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import Layout from '../layout/Layout';
+
+import CharactersList from '../components/organisms/CharactersList';
+import {
+  getCharacters,
+  getSelectedCharacter,
+} from '../redux/character/characterActions';
+
 const Title = Styled.h1`
 font-size: 40px;
 text-align: center;
 margin-top: 100px;
 `;
 
-import {
-  getCharacters,
-  getSelectedCharacter,
-} from '../redux/character/characterActions';
-
-import Layout from '../layout/Layout';
-
-import CharactersList from '../components/organisms/CharactersList';
-
-const Home = (props) => {
+const Home = () => {
   const dispatch = useDispatch();
   const router = useRouter();
 

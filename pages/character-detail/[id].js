@@ -8,14 +8,15 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { SvgIcon } from '@material-ui/core';
-import { getSelectedCharacter } from '../../redux/character/characterActions';
 
-import Layout from '../../layout/Layout';
-import CardCharacter from '../../components/atoms/characters/CardCharacter';
 import Event from '@material-ui/icons/Event';
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import WorkIcon from '@material-ui/icons/Work';
 import CameraRollIcon from '@material-ui/icons/CameraRoll';
+
+import CardCharacter from '../../components/atoms/characters/CardCharacter';
+import Layout from '../../layout/Layout';
+import { getSelectedCharacter } from '../../redux/character/characterActions';
 
 const DetailContainer = Styled.div`
 display: flex;
