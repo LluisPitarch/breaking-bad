@@ -9,7 +9,6 @@ import { AnimatePresence } from 'framer-motion';
 import { ToastContainer } from 'react-toastify';
 
 import configureStore from '../redux/store';
-import nextI18NextConfig from '../next-i18next.config';
 
 import '../styles/globals.css';
 import '../styles/font.css';
@@ -48,4 +47,11 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default appWithTranslation(MyApp, nextI18NextConfig);
+export default appWithTranslation(MyApp, {
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+    localePath: './public/locales',
+    defaultNS: 'app',
+  },
+});
