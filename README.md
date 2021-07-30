@@ -30,4 +30,4 @@ The translation is based in [next-i18next](https://github.com/isaachinman/next-i
 
 The project also have super simple page transitions to improve UX on page changing with [Framer Motion](https://www.framer.com/motion/) + [React Toastify](https://www.npmjs.com/package/react-toastify) to handle feedback to the user on errors.
 
-Also you can check the site live in this [link](lluis.site)
+Also you can check the site live in this [link](https://breaking-bad-three.vercel.app)
