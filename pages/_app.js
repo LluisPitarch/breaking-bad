@@ -3,10 +3,11 @@ import Head from 'next/head';
 import axios from 'axios';
 import { Provider } from 'react-redux';
 
-import { appWithTranslation } from 'next-i18next';
-
 import { AnimatePresence } from 'framer-motion';
 import { ToastContainer } from 'react-toastify';
+
+import { appWithTranslation } from 'next-i18next';
+import nextI18NextConfig from '../next-i18next.config';
 
 import configureStore from '../redux/store';
 
@@ -15,8 +16,6 @@ import '../styles/font.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'react-toastify/dist/ReactToastify.css';
-
-const path = require('path');
 
 const store = configureStore();
 
@@ -49,12 +48,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default appWithTranslation(MyApp, {
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'es'],
-    localePath: './public/locales',
-    defaultNS: 'app',
-  },
-  localePath: path.resolve('./public/locales'),
-});
+export default appWithTranslation(MyApp, nextI18NextConfig);
