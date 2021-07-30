@@ -20,7 +20,7 @@ import { getSelectedCharacter } from '../../redux/character/characterActions';
 
 const DetailContainer = Styled.div`
 display: flex;
-height: calc(100vh - 221px);
+min-height: calc(100vh - 221px);
 width: 100%;
 justify-content: center;
 align-items: center;
@@ -30,6 +30,7 @@ flex-wrap: wrap;
 const Info = Styled.div`
 background: #080808;
 border: 1px solid #fff;
+margin-top: 30px;
 `;
 
 const FeatureContainer = Styled.span`
@@ -37,6 +38,8 @@ display: flex;
 align-items: center;
 padding: 15px 15px;
 border-bottom: 1px solid #fff;
+
+
 `;
 
 const Title = Styled.span`
