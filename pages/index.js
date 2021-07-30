@@ -19,6 +19,11 @@ const Title = Styled.h1`
 font-size: 40px;
 text-align: center;
 margin-top: 100px;
+
+@media (max-width: 768px) {
+  margin-top: 0px;
+  font-size: 30px
+}
 `;
 
 const Home = () => {

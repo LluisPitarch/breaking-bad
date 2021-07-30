@@ -10,6 +10,11 @@ justify-content:center;
 min-width: 370px;
 height: fit-content;
 cursor: ${(props) => (props.theresIsOnClickAction ? 'pointer' : 'default')};
+
+@media (max-width: 768px) {
+min-width: fit-content;
+width: 100%;
+}
 `;
 
 const StyledImage = Styled(Image)`

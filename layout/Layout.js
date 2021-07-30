@@ -9,6 +9,7 @@ const StyledLayout = Styled.div`
   background: linear-gradient(0deg, rgba(14,19,22,1) 0%, rgba(6,70,35,1) 100%), url(/img/bg.jpg) repeat ;
   background-size: cover;
   background-blend-mode: color;
+  height: fit-content;
 
 &::before { 
   content: "";
