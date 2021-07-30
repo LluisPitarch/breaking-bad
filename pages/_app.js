@@ -16,6 +16,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+const path = require('path');
+
 const store = configureStore();
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
@@ -54,4 +56,5 @@ export default appWithTranslation(MyApp, {
     localePath: './public/locales',
     defaultNS: 'app',
   },
+  localePath: path.resolve('./public/locales'),
 });
