@@ -8,7 +8,6 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Layout from '../layout/Layout';
-import nextI18NextConfig from '../next-i18next.config';
 
 import CharactersList from '../components/organisms/CharactersList';
 import {
@@ -61,7 +60,7 @@ const Home = () => {
 export async function getServerSideProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['app'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['app'])),
     },
   };
 }

@@ -14,8 +14,6 @@ import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import WorkIcon from '@material-ui/icons/Work';
 import CameraRollIcon from '@material-ui/icons/CameraRoll';
 
-import nextI18NextConfig from '../../next-i18next.config';
-
 import CardCharacter from '../../components/atoms/characters/CardCharacter';
 import Layout from '../../layout/Layout';
 import { getSelectedCharacter } from '../../redux/character/characterActions';
@@ -131,7 +129,7 @@ export default CharacterDetail;
 export async function getServerSideProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['app'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['app'])),
     },
   };
 }
